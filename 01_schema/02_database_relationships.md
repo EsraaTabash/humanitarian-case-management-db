@@ -2,42 +2,56 @@
 
 ## Main Tables
 
-### Beneficiaries
-Stores beneficiary personal information.
-
 ### Households
-Stores household information linked to beneficiaries.
+Stores household-level information such as head of household, location, phone number, family size, and registration date.
 
-### Assessments
-Stores vulnerability and needs assessments.
+### Beneficiaries
+Stores individual beneficiary information linked to a household.
 
-### Cases
-Stores case management records.
-
-### Referrals
-Stores service referral records.
-
-### FollowUps
-Stores follow-up visit records.
+### CaseWorkers
+Stores information about case workers responsible for assessments and follow-up activities.
 
 ### Services
-Stores available humanitarian services.
+Stores humanitarian services available for referral, such as food assistance, cash assistance, protection, health, and shelter.
 
-### Users
-Stores system users and roles.
+### Assessments
+Stores vulnerability and needs assessment records for households.
+
+### Referrals
+Stores service referral records for households.
+
+### FollowUps
+Stores follow-up records related to referrals.
+
+### Incidents
+Stores reported incidents related to households.
 
 ---
 
 ## Relationships
 
-Beneficiaries (1) ---- (Many) Assessments
+Households (1) ---- (Many) Beneficiaries
 
-Beneficiaries (1) ---- (Many) Cases
+Households (1) ---- (Many) Assessments
 
-Cases (1) ---- (Many) Referrals
+CaseWorkers (1) ---- (Many) Assessments
 
-Cases (1) ---- (Many) FollowUps
+Households (1) ---- (Many) Referrals
 
 Services (1) ---- (Many) Referrals
 
-Users (1) ---- (Many) Cases
+Referrals (1) ---- (Many) FollowUps
+
+Households (1) ---- (Many) Incidents
+
+---
+
+## Relationship Summary
+
+- One household can have many beneficiaries.
+- One household can have many vulnerability assessments.
+- One case worker can conduct many assessments.
+- One household can receive many service referrals.
+- One service can be requested by many referrals.
+- One referral can have many follow-up records.
+- One household can have many reported incidents.
