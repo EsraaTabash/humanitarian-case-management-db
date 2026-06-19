@@ -54,3 +54,17 @@
 - Risk Level
 - Referral Status
 - Assessment Date
+
+---
+
+## Data Sources
+
+Power BI connects to SQL Server using reporting views:
+
+- vw_households_by_governorate
+- vw_high_risk_households
+- vw_services_requested
+- vw_active_referrals
+- vw_monthly_referrals
+- vw_referrals_by_service_category
+- vw_followup_summary
